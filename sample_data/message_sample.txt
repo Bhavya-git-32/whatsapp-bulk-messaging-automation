@@ -1,0 +1,5 @@
+Hello,
+
+This is a sample message used for demonstrating the WhatsApp Bulk Messaging Automation project.
+
+Thank you!
