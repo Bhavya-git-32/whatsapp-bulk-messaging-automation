@@ -3,33 +3,25 @@ import tkinter as tk
 from tkinter import messagebox
 
 
-def format_number_for_api(number):
-    """Formats a phone number to the correct 91XXXXXXXXXX format for the API URL."""
+def format_number(number):
 
-    number = re.sub(r'\D', '', str(number))
+    number = re.sub(r"\D", "", str(number))
 
-    if len(number) == 12 and number.startswith('91'):
-        return number
+    if len(number) == 10:
+        return "91" + number
 
-    elif len(number) == 10:
-        return '91' + number
-
-    elif number.startswith('91'):
-        return number
-
-    else:
-        return number
+    return number
 
 
-def ask_for_retry():
-    """Displays a GUI pop-up asking whether to retry failed contacts."""
+def ask_retry():
 
     root = tk.Tk()
+
     root.withdraw()
 
     response = messagebox.askyesno(
         "Retry Failed Contacts",
-        "Do you want to retry the failed contacts using the direct link method?"
+        "Retry failed contacts?"
     )
 
     root.destroy()
