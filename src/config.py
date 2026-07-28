@@ -19,11 +19,6 @@ USER_DATA_DIR = os.path.join(
 
 REMOTE_DEBUGGING_PORT = "9222"
 
-MSEDGEDRIVER_PATH = os.path.join(
-    BASE_DIR,
-    "msedgedriver.exe"
-)
-
 # ======================================================
 # Input Files
 # ======================================================

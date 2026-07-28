@@ -4,7 +4,6 @@ import subprocess
 import time
 
 from selenium import webdriver
-from selenium.webdriver.edge.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -17,7 +16,6 @@ from config import (
     EDGE_PATH,
     USER_DATA_DIR,
     REMOTE_DEBUGGING_PORT,
-    MSEDGEDRIVER_PATH,
 )
 
 
@@ -65,7 +63,7 @@ def launch_edge():
             sock.close()
 
             if result == 0:
-                print(f"✅ Edge ready in {(i+1)*0.5:.1f} seconds.")
+                print(f"✅ Edge ready in {(i + 1) * 0.5:.1f} seconds.")
                 return
 
         except Exception:
@@ -99,14 +97,8 @@ def connect_driver():
 
     options.page_load_strategy = "eager"
 
-    service = Service(
-        executable_path=MSEDGEDRIVER_PATH
-    )
-
-    driver = webdriver.Edge(
-        service=service,
-        options=options,
-    )
+    # Selenium Manager automatically finds the correct EdgeDriver.
+    driver = webdriver.Edge(options=options)
 
     driver.set_page_load_timeout(80)
     driver.implicitly_wait(1)

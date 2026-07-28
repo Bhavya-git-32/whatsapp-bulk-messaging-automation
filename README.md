@@ -2,22 +2,23 @@
 
 ## Overview
 
-WhatsApp Bulk Messaging Automation is a Python application that automates sending WhatsApp messages to multiple contacts using Selenium WebDriver and WhatsApp Web.
+WhatsApp Bulk Messaging Automation is a Python-based automation tool that sends WhatsApp messages to multiple contacts using Selenium WebDriver and WhatsApp Web.
 
-The application reads contacts from an Excel file, sends messages automatically, records execution logs, and retries failed deliveries to improve reliability.
+The application reads contacts from a CSV file, processes messages automatically, maintains execution logs, handles failures using retry mechanisms, and generates execution reports.
 
 ---
 
 ## Features
 
-- Bulk WhatsApp messaging from Excel contacts
+- Bulk WhatsApp messaging from CSV contacts
 - Automated contact search
-- Retry mechanism for failed messages
-- Excel-based execution logging
-- Explicit waits for improved reliability
-- Performance optimizations
+- Message delivery automation
+- Retry mechanism for failed contacts
+- Structured logging
 - Exception handling
-- Simple GUI prompt for retrying failed contacts
+- Configurable execution settings
+- Performance optimization
+- Modular Python architecture
 
 ---
 
@@ -26,55 +27,63 @@ The application reads contacts from an Excel file, sends messages automatically,
 - Python
 - Selenium WebDriver
 - Pandas
-- Tkinter
 - PyAutoGUI
 - Pyperclip
+- OpenPyXL
 - Microsoft Edge WebDriver
-- Microsoft Excel
+- Git
 
 ---
 
 ## Project Structure
-
-```text
 whatsapp-bulk-messaging-automation/
+
 │
 ├── README.md
 ├── requirements.txt
 ├── .gitignore
-├── src/
-├── sample_data/
+│
+├── docs/
+│ ├── architecture.md
+│ └── workflow.md
+│
 ├── logs/
-└── screenshots/
-```
+│ └── .gitkeep
+│
+├── sample_data/
+│ ├── contacts_sample.csv
+│ └── message_sample.txt
+│
+├── screenshots/
+│ └── .gitkeep
+│
+└── src/
+├── main.py
+├── browser.py
+├── config.py
+├── data_loader.py
+├── helpers.py
+├── loggers.py
+├── optimizer.py
+├── retry.py
+└── sender.py
+
 
 ---
 
-## How It Works
+# How It Works
 
-1. Reads contact details from an Excel file.
-2. Loads the message from a text file.
-3. Opens WhatsApp Web.
-4. Searches for each contact.
-5. Sends the message automatically.
-6. Records successful and failed deliveries.
-7. Retries failed contacts using the direct WhatsApp URL method.
+The application workflow:
 
----
-
-## Future Enhancements
-
-- Personalized message templates
-- Media attachments
-- Scheduled messaging
-- Configuration through environment variables
-- Docker support
-- Multi-language support
+1. Reads contact details from a CSV file.
+2. Loads the message content from a text file.
+3. Initializes Selenium WebDriver.
+4. Opens WhatsApp Web.
+5. Searches contacts automatically.
+6. Sends messages.
+7. Tracks successful and failed executions.
+8. Stores execution logs.
+9. Retries failed contacts using retry logic.
 
 ---
 
-## Author
-
-**Bhavya Sri**
-
- Software Analyst | AWS Cloud | Python | Automation
