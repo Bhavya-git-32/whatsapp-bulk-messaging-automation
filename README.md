@@ -1,89 +1,151 @@
 # WhatsApp Bulk Messaging Automation
 
-## Overview
+A Python-based automation tool that streamlines sending personalized WhatsApp messages to multiple contacts using **Selenium WebDriver**. The application reads contact details from an Excel spreadsheet, automates message delivery through WhatsApp Web, and follows a modular architecture for maintainability and scalability.
 
-WhatsApp Bulk Messaging Automation is a Python-based automation tool that sends WhatsApp messages to multiple contacts using Selenium WebDriver and WhatsApp Web.
-
-The application reads contacts from a CSV file, processes messages automatically, maintains execution logs, handles failures using retry mechanisms, and generates execution reports.
+This project demonstrates Python automation, browser automation, Docker containerization, and Continuous Integration using GitHub Actions.
 
 ---
 
-## Features
+## 🚀 Features
 
-- Bulk WhatsApp messaging from CSV contacts
-- Automated contact search
-- Message delivery automation
-- Retry mechanism for failed contacts
-- Structured logging
-- Exception handling
-- Configurable execution settings
-- Performance optimization
-- Modular Python architecture
-
----
-
-## Technology Stack
-
-- Python
-- Selenium WebDriver
-- Pandas
-- PyAutoGUI
-- Pyperclip
-- OpenPyXL
-- Microsoft Edge WebDriver
-- Git
+* Send personalized WhatsApp messages to multiple contacts
+* Read contact details from Excel spreadsheets
+* Modular and reusable project architecture
+* Retry mechanism for failed message delivery
+* Configuration management
+* Structured logging for easier troubleshooting
+* Docker support for consistent deployment
+* GitHub Actions workflow for Continuous Integration (CI)
 
 ---
 
-## Project Structure
+## 🛠 Technology Stack
+
+| Category         | Technologies       |
+| ---------------- | ------------------ |
+| Programming      | Python             |
+| Automation       | Selenium WebDriver |
+| Containerization | Docker             |
+| CI/CD            | GitHub Actions     |
+| Data Handling    | OpenPyXL           |
+| Logging          | Python Logging     |
+| Version Control  | Git & GitHub       |
+
+---
+
+## 📂 Project Structure
+
+```text
 whatsapp-bulk-messaging-automation/
-
 │
-├── README.md
-├── requirements.txt
-├── .gitignore
+├── .github/
+│   └── workflows/
 │
 ├── docs/
-│ ├── architecture.md
-│ └── workflow.md
 │
 ├── logs/
-│ └── .gitkeep
 │
 ├── sample_data/
-│ ├── contacts_sample.csv
-│ └── message_sample.txt
 │
 ├── screenshots/
-│ └── .gitkeep
 │
-└── src/
-├── main.py
-├── browser.py
-├── config.py
-├── data_loader.py
-├── helpers.py
-├── loggers.py
-├── optimizer.py
-├── retry.py
-└── sender.py
-
-
----
-
-# How It Works
-
-The application workflow:
-
-1. Reads contact details from a CSV file.
-2. Loads the message content from a text file.
-3. Initializes Selenium WebDriver.
-4. Opens WhatsApp Web.
-5. Searches contacts automatically.
-6. Sends messages.
-7. Tracks successful and failed executions.
-8. Stores execution logs.
-9. Retries failed contacts using retry logic.
+├── src/
+│
+├── tests/
+│
+├── .gitignore
+├── Dockerfile
+├── README.md
+├── requirements.txt
+└── LICENSE
+```
 
 ---
 
+## ⚙️ Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/Bhavya-git-32/whatsapp-bulk-messaging-automation.git
+```
+
+### Navigate to the project
+
+```bash
+cd whatsapp-bulk-messaging-automation
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Usage
+
+1. Open WhatsApp Web and scan the QR code.
+2. Place the contact Excel file inside the `sample_data` folder.
+3. Configure the required settings.
+4. Run the application.
+
+```bash
+python src/main.py
+```
+
+---
+
+## 🐳 Running with Docker
+
+Build the Docker image:
+
+```bash
+docker build -t whatsapp-bulk-messaging-automation .
+```
+
+Run the container:
+
+```bash
+docker run whatsapp-bulk-messaging-automation
+```
+
+---
+
+## 🔄 Continuous Integration
+
+GitHub Actions is configured to automate parts of the development workflow. Depending on the workflow configuration, it can help validate changes and ensure the project remains consistent after new commits.
+
+---
+
+## 📸 Screenshots
+
+Screenshots demonstrating the application workflow will be added in future updates.
+
+---
+
+## 🔮 Future Enhancements
+
+* Schedule messages for a future date and time
+* Support media attachments (images, documents, videos)
+* Contact grouping and batch processing
+* Custom message templates
+* Improved reporting and delivery status
+* Web-based user interface
+* Cloud deployment
+
+---
+
+## 👩‍💻 Author
+
+**Bhavya Sri**
+
+* LinkedIn: https://linkedin.com/in/sattibhavyasri
+* GitHub: https://github.com/Bhavya-git-32
+
+---
+
+## ⭐ If you found this project useful
+
+If you found this repository helpful or interesting, consider giving it a ⭐ on GitHub.
